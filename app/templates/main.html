@@ -1,0 +1,14 @@
+{% block content %}
+<form method="GET">
+    {% csrf_token %}
+<button type="button">Project</button>
+</form>
+    <form method="GET">
+    {% csrf_token %}
+<button type="button">Question</button>
+</form>
+    <form method="GET">
+    {% csrf_token %}
+<button type="button" action="{% url 'edit_profile' %}" class="" >Topics</button>
+</form>
+{% endblock %}
