@@ -1,0 +1,21 @@
+<html>
+
+<body>
+
+{% for object in instance %}
+{{ object.pk }}</br>
+{{ object.description }}</br>
+{{ object.is_published }} {{ object.is_internal }}</br>
+{{ object.published_time }}</br>
+
+</br>
+{% endfor %}
+<form method="GET" action="{% url 'get_question' %}">
+    <button>BACK</button></form>
+
+
+<form method="GET" action="{% url 'post_answer' %}">
+    <button>Add answer</button></form>
+</body>
+
+</html>

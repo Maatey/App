@@ -1,0 +1,9 @@
+<body>
+
+<form method="POST">{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Save" /></form>
+
+<form method="GET" action="{% url 'get_answer' %}"><button>Back</button></form>
+
+</body>

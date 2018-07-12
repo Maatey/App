@@ -15,7 +15,7 @@ class Topic(models.Model):
         (RESOLVED, 'Resolved'),
     )
     title = models.CharField(max_length=64)
-    description = models.TextField(max_length=255)
+    text = models.TextField(max_length=255)
     status = models.CharField(choices=STATUS_CHOICES, default=NEW, max_length=3)
     is_published = models.BooleanField(default=False)
     author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)

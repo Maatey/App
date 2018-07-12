@@ -1,6 +1,9 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+from django.views.generic import CreateView
+
+from app.models import Project, Topic, Question, Answer
 
 
 class SignupForm(UserCreationForm):
@@ -11,11 +14,44 @@ class SignupForm(UserCreationForm):
         fields = ('username', 'email', 'password1', 'password2')
 
 
-class EditProfileForm(forms.ModelForm):
-
-    first_name = forms.CharField(label='First Name')
-    last_name = forms.CharField(label='Last Name')
-
+class ProjectForm(forms.ModelForm):
     class Meta:
-        model = User
-        fields = ['first_name', 'last_name']
+        model = Project
+        fields = [
+            "title",
+            "description"
+        ]
+
+
+class TopicForm(forms.ModelForm):
+    class Meta:
+        model = Topic
+        fields = [
+            "title",
+            "text",
+            "status",
+            "author",
+            "is_published",
+            # "project",
+            # "marked",
+        ]
+
+
+class QuestionForm(forms.ModelForm):
+    class Meta:
+        model = Question
+        fields = [
+            "title",
+            "text",
+            "status",
+            # "project",
+            # "marked",
+        ]
+
+class AnswerForm(forms.ModelForm):
+    class Meta:
+        model = Answer
+        fields = [
+            "description",
+            "is_published",
+        ]

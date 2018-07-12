@@ -1,0 +1,9 @@
+
+{% block content %}
+    <h2>Project</h2>
+{% for object in object_list %}
+{{ object.title }}
+{{ object.description }}
+{% endfor %}
+
+{% endblock %}

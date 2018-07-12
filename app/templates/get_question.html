@@ -1,0 +1,19 @@
+<html>
+
+<body>
+
+{% for object in instance %}
+Question {{ object.pk }}: <a href="{% url 'get_answer' %}">{{ object.title }} </a></br>
+{{ object.text }}</br>
+{{ object.author }}</br>
+{{ object.project }}</br>
+{{ object.status }}</br>
+{{ object.published_time }}</br>
+
+</br>
+{% endfor %}
+<form method="GET" action="{% url 'main' %}">
+    <button>BACK</button></form>
+</body>
+
+</html>

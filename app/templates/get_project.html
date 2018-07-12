@@ -1,0 +1,17 @@
+<html>
+
+<body>
+
+<h2>{{ title }}</h2>
+{% for object in object_list %}
+
+<a href="{% url 'get_question' %}">{{ object.title }}</a></br>
+{{ object.description }}</br>
+</br>
+{% endfor %}
+
+<form method="GET" action="{% url 'post_project' %}">
+    <button>Create project</button></form>
+</body>
+
+</html>

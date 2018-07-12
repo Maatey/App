@@ -1,0 +1,28 @@
+{% extends 'bootstrap.html' %}
+
+{% load bootstrap3 %}
+
+{% block bootstrap3_content %}
+<head>
+    <meta charset="UTF-8">
+    <title>Main</title>
+</head>
+<body>
+<h1>Main</h1>
+<form method="GET" action="{% url 'get_project' %}"><button>Project</button>
+</form>
+    <ul>Projects menu
+        <li><a href="{% url 'main' %}">Projects</a></li>
+        <li><a href="{% url 'main' %}">add Project</a></li>
+    </ul>
+    <ul>Topics menu
+        <li><a href="{% url 'main' %}">Topics</a></li>
+        <li><a href="{% url 'main' %}">add Topic</a></li>
+    </ul>
+    <ul>Questions
+        <li><a href="{% url 'main' %}">Questions</a></li>
+        <li><a href="{% url 'main' %}">add Question</a></li>
+    </ul>
+</body>
+</html>
+{% endblock %}
